@@ -1,4 +1,4 @@
-{% set version = "0.7.1" %}
+{% set version = "0.8.7" %}
 
 package:
   name: r-irkernel
@@ -7,7 +7,7 @@ package:
 source:
   fn: IRkernel-{{ version }}.tar.gz
   url: https://github.com/IRkernel/IRkernel/archive/{{ version }}.tar.gz
-  sha256: 275fb780ac5ebc4cae249b17f7c38c3a7186231265cae21a49cbd4bdcd67cb1e
+  sha256: a8faab55c6de09526a7c21ae1cd8c98d23327352fb3af3b2ca0c74657186ed3d
 
 build:
   number: 0
