@@ -22,8 +22,6 @@ build:
 requirements:
   build:
     - r-base
-    - posix  # [win64]
-    - m2-git  # [win64]
     - r-codetools
     - r-irdisplay >=0.3.0.9999
     - r-crayon
