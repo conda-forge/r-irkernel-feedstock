@@ -1,4 +1,7 @@
-{% set version = "0.8.7" %}
+{% set version = "0.8.11" %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-irkernel
@@ -7,7 +10,7 @@ package:
 source:
   fn: IRkernel-{{ version }}.tar.gz
   url: https://github.com/IRkernel/IRkernel/archive/{{ version }}.tar.gz
-  sha256: a8faab55c6de09526a7c21ae1cd8c98d23327352fb3af3b2ca0c74657186ed3d
+  sha256: 15e97c435edae77f7fab707843d25ddc53455a28905951e8c15d9c9387cac461
 
 build:
   number: 0
@@ -16,29 +19,28 @@ build:
     - lib/R/lib/
     - lib/
 
-requirements:  # [not win32]
-  build:  # [not win32]
-    - r-base  # [not win32]
-    - posix  # [win64]
-    - m2-git  # [win64]
-    - r-irdisplay >=0.3.0.9999  # [not win32]
-    - r-crayon  # [not win32]
-    - r-digest  # [not win32]
-    - r-evaluate >=0.5.4  # [not win32]
-    - r-jsonlite >=0.9.6  # [not win32]
-    - r-pbdzmq >=0.2_1  # [not win32]
-    - r-repr >=0.4.99  # [not win32]
-    - r-uuid  # [not win32]
-  run:  # [not win32]
-    - r-base  # [not win32]
-    - r-irdisplay >=0.3.0.9999  # [not win32]
-    - r-crayon  # [not win32]
-    - r-digest  # [not win32]
-    - r-evaluate >=0.5.4  # [not win32]
-    - r-jsonlite >=0.9.6  # [not win32]
-    - r-pbdzmq >=0.2_1  # [not win32]
-    - r-repr >=0.4.99  # [not win32]
-    - r-uuid  # [not win32]
+requirements:
+  build:
+    - r-base
+    - r-codetools
+    - r-irdisplay >=0.3.0.9999
+    - r-crayon
+    - r-digest
+    - r-evaluate >=0.5.4
+    - r-jsonlite >=0.9.6
+    - r-pbdzmq >=0.2_1
+    - r-repr >=0.4.99
+    - r-uuid
+  run:
+    - r-base
+    - r-irdisplay >=0.3.0.9999
+    - r-crayon
+    - r-digest
+    - r-evaluate >=0.5.4
+    - r-jsonlite >=0.9.6
+    - r-pbdzmq >=0.2_1
+    - r-repr >=0.4.99
+    - r-uuid
 
 test:
   commands:
@@ -55,3 +57,6 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - mariusvniekerk
+    - johanneskoester
+    - bgruening
