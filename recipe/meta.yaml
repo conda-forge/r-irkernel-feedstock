@@ -1,4 +1,4 @@
-{% set version = "0.8.12" %}
+{% set version = "0.8.14" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -10,7 +10,7 @@ package:
 source:
   fn: IRkernel-{{ version }}.tar.gz
   url: https://github.com/IRkernel/IRkernel/archive/{{ version }}.tar.gz
-  sha256: 45fce0956155e058e49ccf40a7011d5f8067ebef0ef0b4621f24dbc97a0bfbe3
+  sha256: c4617470b55685fde73632ebb9d18c4fd1972663dce9b60c4cfe9b9eb741d7a1
 
 build:
   number: 0
