@@ -1,9 +1,11 @@
+
 #!/bin/bash
-
-$R CMD INSTALL --build .
-
-# This installs to the wrong place (/usr/local)
-# $R -e "IRkernel::installspec(user=F)"
-
-mkdir -p $PREFIX/share/jupyter/kernels/ir
-cp inst/kernelspec/* $PREFIX/share/jupyter/kernels/ir/
+if [[ $target_platform =~ linux.* ]] || [[ $target_platform == win-32 ]] || [[ $target_platform == win-64 ]] || [[ $target_platform == osx-64 ]]; then
+  export DISABLE_AUTOBREW=1
+  mv DESCRIPTION DESCRIPTION.old
+  grep -v '^Priority: ' DESCRIPTION.old > DESCRIPTION
+  $R CMD INSTALL --build .
+else
+  mkdir -p $PREFIX/lib/R/library/irkernel
+  mv * $PREFIX/lib/R/library/irkernel
+fi
