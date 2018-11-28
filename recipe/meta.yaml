@@ -1,18 +1,19 @@
-{% set version = "0.8.14" %}
-
+{% set version = '0.8.14' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-irkernel
-  version: {{ version }}
+  version: {{ version|replace("-", "_") }}
 
 source:
-  fn: IRkernel-{{ version }}.tar.gz
-  url: https://github.com/IRkernel/IRkernel/archive/{{ version }}.tar.gz
-  sha256: c4617470b55685fde73632ebb9d18c4fd1972663dce9b60c4cfe9b9eb741d7a1
+  url:
+    - {{ cran_mirror }}/src/contrib/IRkernel_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/IRkernel/IRkernel_{{ version }}.tar.gz
+  sha256: 7957136989d28861fc761ff7f8a6525c3c24a8a6cc82012cd78f3db6299b0e5c
 
 build:
+  merge_build_host: True  # [win]
   noarch: generic
   number: 1000
   rpaths:
@@ -21,12 +22,12 @@ build:
 
 requirements:
   build:
+  host:
     - r-base
-    - r-codetools
     - r-irdisplay >=0.3.0.9999
     - r-crayon
     - r-digest
-    - r-evaluate >=0.5.4
+    - r-evaluate >=0.10
     - r-jsonlite >=0.9.6
     - r-pbdzmq >=0.2_1
     - r-repr >=0.4.99
@@ -36,7 +37,7 @@ requirements:
     - r-irdisplay >=0.3.0.9999
     - r-crayon
     - r-digest
-    - r-evaluate >=0.5.4
+    - r-evaluate >=0.10
     - r-jsonlite >=0.9.6
     - r-pbdzmq >=0.2_1
     - r-repr >=0.4.99
@@ -44,15 +45,16 @@ requirements:
 
 test:
   commands:
-    - R -e "library('IRkernel')"  # [not win]
-    - R -e \"library('IRkernel')\"  # [win]
+    - $R -e "library('IRkernel')"           # [not win]
+    - "\"%R%\" -e \"library('IRkernel')\""  # [win]
 
 about:
-  home: https://github.com/IRkernel/IRkernel
+  home: https://CRAN.R-project.org/package=IRkernel
   license: MIT
-  license_file: LICENSE
   summary: "The R kernel for the 'Jupyter' environment executes R code which the front-end ('Jupyter
     Notebook' or other front-ends) submits to the kernel via the network."
+  license_family: MIT
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
 
 extra:
   recipe-maintainers:
@@ -60,3 +62,7 @@ extra:
     - mariusvniekerk
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
