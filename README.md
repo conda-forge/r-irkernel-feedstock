@@ -1,7 +1,7 @@
 About r-irkernel
 ================
 
-Home: https://github.com/IRkernel/IRkernel
+Home: https://CRAN.R-project.org/package=IRkernel
 
 Package license: MIT
 
