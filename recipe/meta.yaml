@@ -1,4 +1,4 @@
-{% set version = '1.0.1' %}
+{% set version = '1.0.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/IRkernel_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/IRkernel/IRkernel_{{ version }}.tar.gz
-  sha256: 7a3cddb6079b2923ee3ad2aaa44ad0d3415be14b0bb464973e172303562a32be
+  sha256: 976f63a3c76f03ec793213255022d7b9aa91c4dcd5aa1c90d35dfd72cc8b1810
 
 build:
   merge_build_host: True  # [win]
@@ -66,7 +66,7 @@ extra:
 # Package: IRkernel
 # Title: Native R Kernel for the 'Jupyter Notebook'
 # Description:  The R kernel for the 'Jupyter' environment executes R code which the front-end ('Jupyter Notebook' or other front-ends) submits to the kernel via the network.
-# Version: 1.0.1
+# Version: 1.0.2
 # Authors@R: c( person('Thomas', 'Kluyver', role = c('aut', 'cph'), email = 'thomas@kluyver.me.uk'), person('Philipp', 'Angerer', role = c('aut', 'cph', 'cre'), email = 'phil.angerer@gmail.com', comment = c(ORCID = "0000-0002-0369-2888")), person('Jan', 'Schulz', role = c('aut', 'cph'), email = 'jasc@gmx.net'), person('Karthik', 'Ram', role = c('aut', 'cph'), email = 'karthik.ram@gmail.com'))
 # Depends: R (>= 3.2.0)
 # Suggests: testthat, roxygen2
@@ -78,8 +78,8 @@ extra:
 # Collate: 'class_unions.r' 'logging.r' 'comm_manager.r' 'compat.r' 'completion.r' 'environment_runtime.r' 'environment_shadow.r' 'options.r' 'execution.r' 'handlers.r' 'help.r' 'installspec.r' 'utils.r' 'kernel.r' 'main.r' 'onload.r'
 # RoxygenNote: 6.1.1
 # NeedsCompilation: no
-# Packaged: 2019-05-02 10:14:54 UTC; angerer
+# Packaged: 2019-07-12 20:16:26 UTC; phil
 # Author: Thomas Kluyver [aut, cph], Philipp Angerer [aut, cph, cre] (<https://orcid.org/0000-0002-0369-2888>), Jan Schulz [aut, cph], Karthik Ram [aut, cph]
 # Maintainer: Philipp Angerer <phil.angerer@gmail.com>
 # Repository: CRAN
-# Date/Publication: 2019-05-02 11:30:10 UTC
+# Date/Publication: 2019-07-12 20:30:04 UTC
