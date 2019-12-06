@@ -1,4 +1,4 @@
-{% set version = '1.0.2' %}
+{% set version = "1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/IRkernel_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/IRkernel/IRkernel_{{ version }}.tar.gz
-  sha256: 976f63a3c76f03ec793213255022d7b9aa91c4dcd5aa1c90d35dfd72cc8b1810
+  sha256: 2469431c468a3f586ffe8adc260fa368fd8d6b4e65bde318f941fb1692ee38ee
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
