@@ -4,4 +4,4 @@ if [[ $target_platform =~ linux.* ]] || [[ $target_platform == win-32 ]] || [[ $
   $R CMD INSTALL --build .
 fi
 
-$R -e "IRkernel::installspec(prefix = $PREFIX)"
+$R -e "IRkernel::installspec(sys_prefix = TRUE)"
