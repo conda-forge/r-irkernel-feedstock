@@ -33,7 +33,6 @@ requirements:
     - r-pbdzmq >=0.2_1
     - r-repr >=0.4.99
     - r-uuid
-    - jupyter
   run:
     - r-base
     - r-irdisplay >=0.3.0.9999
@@ -44,7 +43,6 @@ requirements:
     - r-pbdzmq >=0.2_1
     - r-repr >=0.4.99
     - r-uuid
-    - jupyter
     
 test:
   commands:
