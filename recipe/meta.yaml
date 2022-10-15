@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -33,6 +33,7 @@ requirements:
     - r-pbdzmq >=0.2_1
     - r-repr >=0.4.99
     - r-uuid
+    - jupyter
   run:
     - r-base
     - r-irdisplay >=0.3.0.9999
@@ -43,7 +44,8 @@ requirements:
     - r-pbdzmq >=0.2_1
     - r-repr >=0.4.99
     - r-uuid
-
+    - jupyter
+    
 test:
   commands:
     - $R -e "library('IRkernel')"           # [not win]
