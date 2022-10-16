@@ -2,4 +2,5 @@
 export DISABLE_AUTOBREW=1
 $R CMD INSTALL --build .
 
-$R -e "IRkernel::installspec(sys_prefix = TRUE)"
+mkdir -p $PREFIX/share/jupyter/kernels/ir
+cp inst/kernelspec/* $PREFIX/share/jupyter/kernels/ir/
