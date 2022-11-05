@@ -1,4 +1,4 @@
-{% set version = "1.3" %}
+{% set version = "1.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/IRkernel_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/IRkernel/IRkernel_{{ version }}.tar.gz
-  sha256: 5a7fcbfd978dfb3cca6702a68a21c147551995fc400084ae8382ffcbbdae1903
+  sha256: 3186e3a177c7246d45218af55f8b10836540e68a2d106858a0385f7d741b640c
 
 build:
   merge_build_host: true  # [win]
-  number: 3
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -43,7 +43,7 @@ requirements:
     - r-pbdzmq >=0.2_1
     - r-repr >=0.4.99
     - r-uuid
-    
+
 test:
   commands:
     - $R -e "library('IRkernel')"           # [not win]
