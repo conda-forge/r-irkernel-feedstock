@@ -1,11 +1,11 @@
-About r-irkernel
-================
+About r-irkernel-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-irkernel-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=IRkernel
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-irkernel-feedstock/blob/main/LICENSE.txt)
 
 Summary:  The R kernel for the 'Jupyter' environment executes R code which the front-end ('Jupyter Notebook' or other front-ends) submits to the kernel via the network.
 
